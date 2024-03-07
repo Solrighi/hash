@@ -1,0 +1,9 @@
+.letterStyle {
+  height: 150px;
+  width: 150px;
+  background-color: blue;
+  font-size: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
