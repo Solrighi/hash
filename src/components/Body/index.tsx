@@ -10,11 +10,6 @@ interface LetterType {
   id: number;
 }
 
-interface Item {
-  letter: string;
-  id: number;
-}
-
 const potentialPlays = [
   [1, 2, 3],
   [4, 5, 6],
@@ -56,7 +51,7 @@ function Game() {
     setCardList(newCardList);
   }
 
-  function getGames(arr: Item[]) {
+  function getGames(arr: LetterType[]) {
     return {
       x: arr.filter((a) => a.letter === "X").map((a) => a.id),
       o: arr.filter((a) => a.letter === "O").map((a) => a.id),
