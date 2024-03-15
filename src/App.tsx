@@ -21,13 +21,10 @@ function App() {
         justify="center"
         gap={"50px"}
       >
-        <Stack>
-          <Title fw={500} c={"white"} ta={"center"}>
-            TicTacToe
-          </Title>
-          <Game />
-          <Points you={5} other={7} tie={4} />
-        </Stack>
+        <Title fw={500} c={"white"} ta={"center"}>
+          TicTacToe
+        </Title>
+        <Game />
       </Stack>
     </MantineProvider>
   );
