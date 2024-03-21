@@ -154,35 +154,42 @@ function Game() {
 
   return (
     <Stack>
-      {counter > 0 && (
-        <Stack
-          style={{
-            zIndex: "1",
-            position: "absolute",
-            width: "25%",
-            alignItems: "center",
-            height: "55%",
-            justifyContent: "center",
-            fontSize: "100px",
-            color: "rgb(174, 255, 168)",
-            textShadow: "0 2px 10px #00000057",
-          }}
-        >
-          <motion.div
-            key={counter}
-            initial={{ scale: 2 }}
-            animate={{ rotate: 360, scale: 2 }}
-            transition={{
-              type: "spring",
-              stiffness: 260,
-              damping: 20,
+      <Stack
+        bg={"#fefeff"}
+        p={"40px"}
+        style={{ borderRadius: "50px" }}
+        pos={"relative"}
+      >
+        {counter > 0 && (
+          <Stack
+            style={{
+              zIndex: "1",
+              position: "absolute",
+              width: "100%",
+              alignItems: "center",
+              height: "100%",
+              top: "0",
+              left: "0",
+              justifyContent: "center",
+              fontSize: "100px",
+              color: "rgb(174, 255, 168)",
+              textShadow: "0 2px 10px #00000057",
             }}
           >
-            {counter}
-          </motion.div>
-        </Stack>
-      )}
-      <Stack bg={"#fefeff"} p={"40px"} style={{ borderRadius: "50px" }}>
+            <motion.div
+              key={counter}
+              initial={{ scale: 2 }}
+              animate={{ rotate: 360, scale: 2 }}
+              transition={{
+                type: "spring",
+                stiffness: 260,
+                damping: 20,
+              }}
+            >
+              {counter}
+            </motion.div>
+          </Stack>
+        )}
         <SimpleGrid cols={3} spacing={"5px"} bg={"#f7f6f8"}>
           {cardList.map((card: LetterType) => {
             return (
