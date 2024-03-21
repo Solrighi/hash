@@ -59,6 +59,7 @@ function Game() {
   const [pointsTie, setPointsTie] = useState(0);
   const [risk, setRisk] = useState("");
   const [counter, setCounter] = useState(0);
+  const mediaQuery = window.matchMedia("(max-device-width: 600px)");
 
   function handleClick(card: LetterType) {
     if (cardList.filter((c) => c.id === card.id)[0].letter !== "") {
@@ -171,7 +172,7 @@ function Game() {
               top: "0",
               left: "0",
               justifyContent: "center",
-              fontSize: "100px",
+              fontSize: mediaQuery.matches ? "200px" : "100px",
               color: "rgb(174, 255, 168)",
               textShadow: "0 2px 10px #00000057",
             }}
