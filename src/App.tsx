@@ -7,6 +7,8 @@ const theme = createTheme({
   fontFamily: "Passion One, sans-serif",
 });
 
+const mediaQuery = window.matchMedia("(max-device-width: 600px)");
+
 function App() {
   return (
     <MantineProvider theme={theme}>
@@ -20,7 +22,12 @@ function App() {
         justify="center"
         gap={"30px"}
       >
-        <Title fw={400} c={"white"} ta={"center"} fz={"50px"}>
+        <Title
+          fw={400}
+          c={"white"}
+          ta={"center"}
+          fz={mediaQuery.matches ? "80px" : "50px"}
+        >
           TicTacToe
         </Title>
         <Game />

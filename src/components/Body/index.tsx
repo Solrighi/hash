@@ -154,7 +154,7 @@ function Game() {
   }, [counter]);
 
   return (
-    <Stack>
+    <Stack gap={"20px"}>
       <Stack
         bg={"#fefeff"}
         p={"40px"}

@@ -6,12 +6,15 @@ interface Props {
   tie: number;
 }
 
+const mediaQuery = window.matchMedia("(max-device-width: 600px)");
+
 const styleDescription = {
   p: 0,
   ff: "DM Serif Display, serif",
+  fz: mediaQuery.matches ? "25px" : "10px",
 };
 const stylePoint = {
-  fz: "35px",
+  fz: mediaQuery.matches ? "45px" : "35px",
   lh: 1,
 };
 const styleBlock = {
