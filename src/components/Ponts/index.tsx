@@ -1,10 +1,23 @@
 import { SimpleGrid, Stack, Text } from "@mantine/core";
 
 interface Props {
-  you: number;
-  other: number;
+  X: number;
+  O: number;
   tie: number;
 }
+
+const styleDescription = {
+  p: 0,
+  ff: "DM Serif Display, serif",
+};
+const stylePoint = {
+  fz: "35px",
+  lh: 1,
+};
+const styleBlock = {
+  align: "center",
+  gap: 0,
+};
 
 function Points(prop: Props) {
   return (
@@ -18,23 +31,17 @@ function Points(prop: Props) {
         backgroundColor: "#ffffff12",
       }}
     >
-      <Stack align="center" gap={0}>
-        <Stack fz={"30px"} lh={1} fw={"bold"}>
-          {prop.you}{" "}
-        </Stack>
-        <Text p={0}>You</Text>
+      <Stack {...styleBlock}>
+        <Stack {...stylePoint}>{prop.X}</Stack>
+        <Text {...styleDescription}>Square</Text>
       </Stack>
-      <Stack align="center" gap={0}>
-        <Stack fz={"30px"} lh={1} fw={"bold"}>
-          {prop.other}
-        </Stack>
-        <Text p={0}>Other</Text>
+      <Stack {...styleBlock}>
+        <Stack {...stylePoint}>{prop.O}</Stack>
+        <Text {...styleDescription}>Sphere</Text>
       </Stack>
-      <Stack align="center" gap={0}>
-        <Stack fz={"30px"} lh={1} fw={"bold"}>
-          {prop.tie}
-        </Stack>
-        <Text p={0}>Tie</Text>
+      <Stack {...styleBlock}>
+        <Stack {...stylePoint}>{prop.tie}</Stack>
+        <Text {...styleDescription}>Tie</Text>
       </Stack>
     </SimpleGrid>
   );

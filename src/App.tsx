@@ -1,11 +1,9 @@
-import React from "react";
 import { MantineProvider, Stack, Title, createTheme } from "@mantine/core";
 import Game from "./components/Body";
 import "@mantine/core/styles.css";
-import Points from "./components/Ponts";
 
 const theme = createTheme({
-  fontFamily: "Quicksand, sans-serif",
+  fontFamily: "Passion One, sans-serif",
 });
 
 function App() {
@@ -19,9 +17,9 @@ function App() {
         }
         align="center"
         justify="center"
-        gap={"50px"}
+        gap={"30px"}
       >
-        <Title fw={500} c={"white"} ta={"center"}>
+        <Title fw={400} c={"white"} ta={"center"} fz={"50px"}>
           TicTacToe
         </Title>
         <Game />
