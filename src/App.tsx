@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { MantineProvider, Stack, Title, createTheme } from "@mantine/core";
+import Game from "./components/Body";
+import "@mantine/core/styles.css";
+import "./App.css";
+
+const theme = createTheme({
+  fontFamily: "Passion One, sans-serif",
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MantineProvider theme={theme}>
+      <Stack
+        h={"100vh"}
+        w={"100vw"}
+        bg={
+          "radial-gradient(circle, rgba(135,135,163,1) 25%, rgba(69,91,125,1) 69%)"
+        }
+        align="center"
+        justify="center"
+        gap={"30px"}
+      >
+        <Title fw={400} c={"white"} ta={"center"} fz={"50px"}>
+          TicTacToe
+        </Title>
+        <Game />
+      </Stack>
+    </MantineProvider>
   );
 }
 

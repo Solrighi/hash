@@ -1,0 +1,50 @@
+import { SimpleGrid, Stack, Text } from "@mantine/core";
+
+interface Props {
+  X: number;
+  O: number;
+  tie: number;
+}
+
+const styleDescription = {
+  p: 0,
+  ff: "DM Serif Display, serif",
+};
+const stylePoint = {
+  fz: "35px",
+  lh: 1,
+};
+const styleBlock = {
+  align: "center",
+  gap: 0,
+};
+
+function Points(prop: Props) {
+  return (
+    <SimpleGrid
+      cols={3}
+      spacing={"xl"}
+      c={"white"}
+      style={{
+        borderRadius: "20px",
+        padding: "20px",
+        backgroundColor: "#ffffff12",
+      }}
+    >
+      <Stack {...styleBlock}>
+        <Stack {...stylePoint}>{prop.X}</Stack>
+        <Text {...styleDescription}>Square</Text>
+      </Stack>
+      <Stack {...styleBlock}>
+        <Stack {...stylePoint}>{prop.O}</Stack>
+        <Text {...styleDescription}>Sphere</Text>
+      </Stack>
+      <Stack {...styleBlock}>
+        <Stack {...stylePoint}>{prop.tie}</Stack>
+        <Text {...styleDescription}>Tie</Text>
+      </Stack>
+    </SimpleGrid>
+  );
+}
+
+export default Points;
