@@ -1,6 +1,7 @@
 import { MantineProvider, Stack, Title, createTheme } from "@mantine/core";
 import Game from "./components/Body";
 import "@mantine/core/styles.css";
+import "./App.css";
 
 const theme = createTheme({
   fontFamily: "Passion One, sans-serif",

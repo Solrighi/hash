@@ -9,8 +9,14 @@ interface Prop {
 }
 
 function calculateWidth(style: string): string {
+  const mediaQuery = window.matchMedia("(max-device-width: 600px)");
   const stylesRequiring150px = ["rotate(45deg)", "rotate(135deg)"];
-  return stylesRequiring150px.includes(style) ? "150px" : "110px";
+
+  if (mediaQuery.matches) {
+    return stylesRequiring150px.includes(style) ? "300px" : "250px";
+  } else {
+    return stylesRequiring150px.includes(style) ? "150px" : "110px";
+  }
 }
 
 function Letter({ letter, style }: Prop) {
